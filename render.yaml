@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ki101-telegram-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn bot:app
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
